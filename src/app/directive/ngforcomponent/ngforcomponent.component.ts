@@ -7,8 +7,39 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NgforcomponentComponent implements OnInit {
 
-  friends= ["Mehul", "Jayesh", "Danish", "Mandeep", "Akshay", "Sakshi", "Mohit"];
+  showFlag = false;
+  age = 30;
 
+  friends= ["Mehul", "Jayesh", "Danish", "Mandeep", "Akshay", "Sakshi", "Mohit"];
+  worldFriends = [
+                      {
+                        name:"Yuko",
+                        location:"Tokyo",
+                        age:30
+                      },
+                      {
+                        name:"John",
+                        location:"Canada",
+                        age:54
+                      },
+                      {
+                        name:"Merry",
+                        location:"Denmark",
+                        age:61
+                      },
+                      {
+                        name:"Yaki",
+                        location:"Russia",
+                        age:39
+                      },
+                      {
+                        name:"Jimmy",
+                        location:"Malaysia",
+                        age:10
+                      }
+
+
+  ]
   friendName = ""
   constructor() { }
 
@@ -22,9 +53,11 @@ export class NgforcomponentComponent implements OnInit {
   }
 
   addFriend = function(){
-    console.log("adding friend..." + this.friendName);
-    this.friends.push(this.friendName);
-    this.friendName="";
+      if(this.friendName!=""){
+        console.log("adding friend..." + this.friendName);
+        this.friends.push(this.friendName);
+        this.friendName="";
+    }
   }
 
 }
