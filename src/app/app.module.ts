@@ -3,6 +3,8 @@ import { NgModule } from '@angular/core';
 
 import {RouterModule, Routes} from '@angular/router'
 import {FormsModule } from '@angular/forms';
+import {ReactiveFormsModule } from '@angular/forms';
+
 
 
 import { RootComponent } from './app.component';
@@ -11,6 +13,8 @@ import { Child1Component } from './family/child1/child1.component';
 import { Child2Component } from './family/child2/child2.component';
 import { MotherComponent } from './family/mother/mother.component';
 import { NgforcomponentComponent } from './directive/ngforcomponent/ngforcomponent.component';
+import { TemplateformComponent } from './forms/templateform/templateform.component';
+import { ModelformComponent } from './forms/modelform/modelform.component';
 
 const myRoutes:Routes= [
           {
@@ -24,6 +28,14 @@ const myRoutes:Routes= [
         {
           path:"ngfordirective",
           component:NgforcomponentComponent
+        },
+        {
+          path:"templateform",
+          component:TemplateformComponent
+        },
+        {
+          path:"modelform",
+          component:ModelformComponent
         }
 
 ];
@@ -35,11 +47,14 @@ const myRoutes:Routes= [
     Child1Component,
     Child2Component,
     MotherComponent,
-    NgforcomponentComponent
+    NgforcomponentComponent,
+    TemplateformComponent,
+    ModelformComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
+    ReactiveFormsModule,
     RouterModule.forRoot(myRoutes)
   ],
   providers: [],

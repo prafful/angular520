@@ -31,9 +31,9 @@ Input Task: <input type="text" [(ngModel)]= "friendName"> {{ friendName }} <br>
     </tr>
     <tr  *ngFor="let v of worldFriends; let counter = index" >
             
-              <td *ngIf="v.age < 30">{{counter}}</td>
-              <td *ngIf="v.age < 30"> {{ v.name }} </td>
-              <td *ngIf="v.age < 30">{{ v.location }}</td>
+              <td *ngIf="v.age <= 30">{{counter}}</td>
+              <td *ngIf="v.age <= 30"> {{ v.name }} </td>
+              <td *ngIf="v.age <= 30">{{ v.location }}</td>
   
 
     </tr>
