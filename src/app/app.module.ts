@@ -4,6 +4,10 @@ import { NgModule } from '@angular/core';
 import {RouterModule, Routes} from '@angular/router'
 import {FormsModule } from '@angular/forms';
 import {ReactiveFormsModule } from '@angular/forms';
+import {HttpClientModule } from '@angular/common/http';
+
+import {UserServiceService} from './service/user-service.service';
+import { User} from './user';
 
 
 
@@ -15,6 +19,8 @@ import { MotherComponent } from './family/mother/mother.component';
 import { NgforcomponentComponent } from './directive/ngforcomponent/ngforcomponent.component';
 import { TemplateformComponent } from './forms/templateform/templateform.component';
 import { ModelformComponent } from './forms/modelform/modelform.component';
+import { ServiceComponent } from './consumeservice/service/service.component';
+import { Service2Component } from './consumeservice/service2/service2.component';
 
 const myRoutes:Routes= [
           {
@@ -36,7 +42,16 @@ const myRoutes:Routes= [
         {
           path:"modelform",
           component:ModelformComponent
+        },
+        {
+          path:"consumeservice1",
+          component:ServiceComponent
+        },
+        {
+          path:"consumeservice2",
+          component:Service2Component
         }
+
 
 ];
 
@@ -49,15 +64,18 @@ const myRoutes:Routes= [
     MotherComponent,
     NgforcomponentComponent,
     TemplateformComponent,
-    ModelformComponent
+    ModelformComponent,
+    ServiceComponent,
+    Service2Component
   ],
   imports: [
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
+    HttpClientModule,
     RouterModule.forRoot(myRoutes)
   ],
-  providers: [],
+  providers: [ UserServiceService],
   bootstrap: [RootComponent]
 })
 export class    AppModule1 { }
