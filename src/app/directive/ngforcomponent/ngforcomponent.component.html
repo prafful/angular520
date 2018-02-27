@@ -1,0 +1,15 @@
+<p>
+  ngforcomponent works!
+</p>
+
+Friends: <br>
+{{  friends }}
+<br>
+Input friend: <input type="text" [(ngModel)]= "friendName"> {{ friendName }} <br>
+<input type="submit" value="Add Friend" (click)="addFriend()">
+
+<ul>
+  <li *ngFor="let v of friends; let counter = index" (click)="showFriendName(counter)">
+   {{counter}}. {{v}}
+  </li>
+</ul>
